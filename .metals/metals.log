@@ -1,0 +1,32 @@
+2020.09.18 16:37:05 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.18 16:37:06 INFO  time: initialize in 1.63s
+2020.09.18 16:38:04 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.18 16:38:05 INFO  time: initialize in 0.99s
+2020.09.18 16:38:05 INFO  skipping build import with status 'Dismissed'
+2020.09.18 16:39:11 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.18 16:39:12 INFO  time: initialize in 1.54s
+2020.09.18 16:39:24 INFO  running '/usr/lib64/jvm/java-11-openjdk/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/pascal/code/masters/bigdata/CS549Project1 -Dmaven.home=/tmp/metals14175851683015162358 -jar /tmp/metals14175851683015162358/maven-wrapper.jar ch.epfl.scala:maven-bloop_2.12:1.4.3-23-550c6c0a:bloopInstall -DdownloadSources=true'
+2020.09.18 16:39:25 INFO  [INFO] Scanning for projects...
+2020.09.18 16:39:25 INFO  [WARNING] 
+2020.09.18 16:39:25 INFO  [WARNING] Some problems were encountered while building the effective model for edu.wpi.project1:project1:jar:1.0-SNAPSHOT
+2020.09.18 16:39:25 INFO  [WARNING] 'build.pluginManagement.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ line 69, column 17
+2020.09.18 16:39:25 INFO  [WARNING] 
+2020.09.18 16:39:25 INFO  [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+2020.09.18 16:39:25 INFO  [WARNING] 
+2020.09.18 16:39:25 INFO  [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+2020.09.18 16:39:25 INFO  [WARNING] 
+2020.09.18 16:39:25 INFO  [INFO] 
+2020.09.18 16:39:25 INFO  [INFO] ---------------------< edu.wpi.project1:project1 >----------------------
+2020.09.18 16:39:25 INFO  [INFO] Building project1 1.0-SNAPSHOT
+2020.09.18 16:39:25 INFO  [INFO] --------------------------------[ jar ]---------------------------------
+2020.09.18 16:39:25 INFO  [INFO] 
+2020.09.18 16:39:25 INFO  [INFO] --- maven-bloop_2.12:1.4.3-23-550c6c0a:bloopInstall (default-cli) @ project1 ---
+2020.09.18 16:39:26 INFO  [WARNING] Skipping configuration file generation: The plugin net.alchim31.maven:scala-maven-plugin could not be found.
+2020.09.18 16:39:26 INFO  [INFO] ------------------------------------------------------------------------
+2020.09.18 16:39:26 INFO  [INFO] BUILD SUCCESS
+2020.09.18 16:39:26 INFO  [INFO] ------------------------------------------------------------------------
+2020.09.18 16:39:26 INFO  [INFO] Total time: 1.198 s
+2020.09.18 16:39:26 INFO  [INFO] Finished at: 2020-09-18T16:39:26-04:00
+2020.09.18 16:39:26 INFO  [INFO] ------------------------------------------------------------------------
+2020.09.18 16:39:26 INFO  build tool exit: 0
+2020.09.18 16:39:26 INFO  time: ran 'mvn bloopInstall' in 2.21s

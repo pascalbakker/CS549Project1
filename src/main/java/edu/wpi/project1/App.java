@@ -22,32 +22,30 @@ public class App {
     */
 
     // TODO Query 2
-    public static void query2(){}
+    public static void mr_query2(){}
 
     // TODO Query 3
-    public static void query3(){}
+    public static void mr_query3(){}
 
     // TODO Query 4
-    public static void query4(){}
+    public static void mr_query4(){}
 
     // TODO Query 5
-    public static void query5(){}
+    public static void mr_query5(){}
 
     /**
         APACHE PIG JOBS
     */
 
     // TODO Query 2
-    public static void query2(){}
+    public static void pig_query2(){}
 
     // TODO Query 3
-    public static void query3(){}
+    public static void pig_query3(){}
 
     // TODO Query 4
-    public static void query4(){}
+    public static void pig_query4(){}
 
     // TODO Query 5
-    public static void query5(){}
-
-
+    public static void pig_query5(){}
 }
