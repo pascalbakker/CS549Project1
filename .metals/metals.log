@@ -48,3 +48,6 @@
 2020.09.19 11:56:42 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
 2020.09.19 11:56:43 INFO  time: initialize in 1.58s
 2020.09.19 11:56:44 INFO  skipping build import with status 'Started'
+2020.09.19 12:00:28 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.19 12:00:29 INFO  time: initialize in 1.21s
+2020.09.19 12:00:30 INFO  skipping build import with status 'Started'
