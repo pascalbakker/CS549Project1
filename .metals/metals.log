@@ -39,3 +39,12 @@
 2020.09.18 16:44:01 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
 2020.09.18 16:44:02 INFO  time: initialize in 1.37s
 2020.09.18 16:44:06 INFO  skipping build import with status 'Installed'
+2020.09.19 11:55:05 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.19 11:55:07 INFO  time: initialize in 1.98s
+2020.09.19 11:55:15 INFO  running '/usr/lib64/jvm/java-11-openjdk/bin/java -Dfile.encoding=UTF-8 -Dmaven.multiModuleProjectDirectory=/home/pascal/code/masters/bigdata/CS549Project1 -Dmaven.home=/tmp/metals9951804474828472216 -jar /tmp/metals9951804474828472216/maven-wrapper.jar ch.epfl.scala:maven-bloop_2.12:1.4.3-23-550c6c0a:bloopInstall -DdownloadSources=true'
+2020.09.19 11:55:23 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.19 11:55:25 INFO  time: initialize in 1.84s
+2020.09.19 11:55:29 INFO  skipping build import with status 'Started'
+2020.09.19 11:56:42 INFO  started: Metals version 0.9.3 in workspace '/home/pascal/code/masters/bigdata/CS549Project1' for client coc-metals.
+2020.09.19 11:56:43 INFO  time: initialize in 1.58s
+2020.09.19 11:56:44 INFO  skipping build import with status 'Started'
