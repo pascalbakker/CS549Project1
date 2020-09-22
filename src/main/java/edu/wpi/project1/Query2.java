@@ -1,35 +1,31 @@
 package edu.wpi.project1;
-import java.io.IOException;
-
-
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Mapper;
-import org.apache.hadoop.mapreduce.Reducer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.HashMap;
 
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+
 // TODO fix names, clean up code
-// combiner done.
 public class Query2{
 
 	// Customer id,name,age,gender,country,salary
 	// Transactions transid, customer_id, total, num_items, desc
 
 	// Mapper for customers
-	public static class CustomerMapper extends Mapper<Object, Text, Text, Text>
+	public static class CustomMapper extends Mapper<Object, Text, Text, Text>
 	{
+		// combiner done.
 		private static HashMap<Integer, String> customerHashpMap = new HashMap<>();
 
-		protected void setup(Context context) throws IOException, InterruptedException {
+		// Retrieve customer data
+		public void setup(Context context) throws IOException, InterruptedException {
 			try{
-					FileSystem fs = FileSystem.get(context.getConfiguration());
 					URI[] customerFile = context.getCacheFiles();
 					if (customerFile != null && customerFile.length > 0) {
 						for (URI file : customerFile){
@@ -68,7 +64,10 @@ public class Query2{
 
 	}
 
-	public static class CustomerCombiner extends Reducer <Text,Text,Text,Text>{
+
+	// input: key customer_id, values "customerName,transValue"
+	// output: key customer_id, values "customerName,totalCount,totalSum"
+	public static class CustomCombiner extends Reducer <Text,Text,Text,Text>{
 			public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 				float sum = 0;
 				int count = 0;
@@ -84,28 +83,23 @@ public class Query2{
 				context.write(key, combinerValue);
 			}
 	}
-	// Reducer: Join customers and transactions
-	public static class ReducerJoin extends Reducer<Text,Text,Text,Text>{
-		// values: { customer_id - [customer_name, amount1, amount2 ...] }
-		public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-		}
-	}
 
-	// Reducer: Join customers and transactions
-	public static class ReduceJoinReducer extends Reducer<Text,Text,Text,Text>{
+	// input: key customer_id, values: ["customerName,count,sum"]
+	// output: key customer_id, values: ["customerName,count,sum"]
+	public static class CustomReducer extends Reducer<Text,Text,Text,Text>{
 		// values: { customer_id - [customer_name, amount1, amount2 ...] }
 		public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 			 Float sum = 0F;
                 int count = 0;
-                String customerName = "";
-                for (Text val : values) {
+                String name = "";
+                for (Text t : values) {
 					//System.out.println(val.toString());
-                    String[] vals = val.toString().split(",");
-                    sum += Float.parseFloat(vals[2]);
-                    customerName = vals[0];
-                    count += Integer.parseInt(vals[1]);
+                    String[] data = t.toString().split(",");
+                    sum += Float.parseFloat(data[2]);
+                    name = data[0];
+                    count += Integer.parseInt(data[1]);
                 }
-                context.write(key, new Text(customerName + "," + count + "," + sum));
+                context.write(key, new Text(name + "," + count + "," + sum));
 		}
 	}
 }

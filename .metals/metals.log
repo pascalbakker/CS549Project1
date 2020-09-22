@@ -6798,3 +6798,879 @@ Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/
 2020.09.22 14:28:18 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
 1 warning.
 2020.09.22 14:28:18 INFO  time: compiled project1 in 0.93s
+2020.09.22 14:30:36 INFO  compiling project1 (1 java source)
+Sep 22, 2020 2:30:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 26,
+            "character": 0
+          },
+          "end": {
+            "line": 26,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "\t\tprivate void setup(Context context) throws IOException, InterruptedException {\n\t\t             ^  attempting to assign weaker access privileges; was protected\n  where KEYIN,VALUEIN,KEYOUT,VALUEOUT are type-variables:\n    KEYIN extends Object declared in class Mapper\n    VALUEIN extends Object declared in class Mapper\n    KEYOUT extends Object declared in class Mapper\n    VALUEOUT extends Object declared in class Mapper\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: setup(Mapper\u003cObject,Text,Text,Text\u003e.Context) in CustomerMapper cannot override setup(Mapper\u003cKEYIN,VALUEIN,KEYOUT,VALUEOUT\u003e.Context) in Mapper"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:30:36 WARN  javac exited with exit code 1
+2020.09.22 14:30:36 INFO  time: compiled project1 in 0.92s
+2020.09.22 14:31:59 INFO  compiling project1 (1 java source)
+Sep 22, 2020 2:32:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 26,
+            "character": 0
+          },
+          "end": {
+            "line": 26,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "\t\tprivate void setup(Context context) throws IOException, InterruptedException {\n\t\t             ^  attempting to assign weaker access privileges; was protected\n  where KEYIN,VALUEIN,KEYOUT,VALUEOUT are type-variables:\n    KEYIN extends Object declared in class Mapper\n    VALUEIN extends Object declared in class Mapper\n    KEYOUT extends Object declared in class Mapper\n    VALUEOUT extends Object declared in class Mapper\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: setup(Mapper\u003cObject,Text,Text,Text\u003e.Context) in CustomerMapper cannot override setup(Mapper\u003cKEYIN,VALUEIN,KEYOUT,VALUEOUT\u003e.Context) in Mapper"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:31:59 WARN  javac exited with exit code 1
+2020.09.22 14:31:59 INFO  time: compiled project1 in 0.92s
+2020.09.22 14:32:06 INFO  compiling project1 (1 java source)
+Sep 22, 2020 2:32:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 26,
+            "character": 0
+          },
+          "end": {
+            "line": 26,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "\t\tprivate void setup(Context context) throws IOException, InterruptedException {\n\t\t             ^  attempting to assign weaker access privileges; was protected\n  where KEYIN,VALUEIN,KEYOUT,VALUEOUT are type-variables:\n    KEYIN extends Object declared in class Mapper\n    VALUEIN extends Object declared in class Mapper\n    KEYOUT extends Object declared in class Mapper\n    VALUEOUT extends Object declared in class Mapper\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: setup(Mapper\u003cObject,Text,Text,Text\u003e.Context) in CustomerMapper cannot override setup(Mapper\u003cKEYIN,VALUEIN,KEYOUT,VALUEOUT\u003e.Context) in Mapper"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/Query2.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:32:06 WARN  javac exited with exit code 1
+2020.09.22 14:32:06 INFO  time: compiled project1 in 0.89s
+2020.09.22 14:33:04 INFO  compiling project1 (1 java source)
+2020.09.22 14:33:04 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:33:04 INFO  time: compiled project1 in 0.91s
+2020.09.22 14:33:04 INFO  compiling project1 (1 java source)
+Sep 22, 2020 2:33:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\n",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:33:06 WARN  javac exited with exit code 1
+2020.09.22 14:33:06 INFO  time: compiled project1 in 0.83s
+2020.09.22 14:33:43 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:33:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:33:43 WARN  javac exited with exit code 1
+2020.09.22 14:33:43 INFO  time: compiled project1 in 0.88s
+2020.09.22 14:33:56 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:33:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:33:56 WARN  javac exited with exit code 1
+2020.09.22 14:33:56 INFO  time: compiled project1 in 0.87s
+2020.09.22 14:34:14 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:34:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:34:14 WARN  javac exited with exit code 1
+2020.09.22 14:34:14 INFO  time: compiled project1 in 0.98s
+2020.09.22 14:35:00 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:35:01 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:35:00 WARN  javac exited with exit code 1
+2020.09.22 14:35:00 INFO  time: compiled project1 in 0.88s
+2020.09.22 14:35:18 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:35:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:35:18 WARN  javac exited with exit code 1
+2020.09.22 14:35:18 INFO  time: compiled project1 in 0.94s
+2020.09.22 14:35:37 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:35:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:35:37 WARN  javac exited with exit code 1
+2020.09.22 14:35:37 INFO  time: compiled project1 in 0.89s
+2020.09.22 14:36:43 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:36:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:36:43 WARN  javac exited with exit code 1
+2020.09.22 14:36:43 INFO  time: compiled project1 in 0.97s
+2020.09.22 14:37:40 INFO  compiling project1 (2 java sources)
+Sep 22, 2020 2:37:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/pascal/code/masters/bigdata/CS549Project1/warning:%5Boptions%5D%20bootstrap%20class%20path%20not%20set%20in%20conjunction%20with%20-source%207%0A/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java"
+    },
+    "buildTarget": {
+      "uri": "file:/home/pascal/code/masters/bigdata/CS549Project1/?id\u003dproject1"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 10,
+            "character": 0
+          },
+          "end": {
+            "line": 10,
+            "character": 0
+          }
+        },
+        "severity": 1,
+        "code": "import edu.wpi.project1.Query2.ReduceJoinReducer;\n                              ^  symbol:   class ReduceJoinReducer\n  location: class Query2\nNote: /home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java uses or overrides a deprecated API.\nNote: Recompile with -Xlint:deprecation for details.\n1 error\n1 warning",
+        "source": "bloop",
+        "message": " error: cannot find symbol"
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/pascal/code/masters/bigdata/CS549Project1/warning:[options] bootstrap class path not set in conjunction with -source 7
+/home/pascal/code/masters/bigdata/CS549Project1/src/main/java/edu/wpi/project1/App.java
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.CommonMtagsEnrichments$XtensionAbsolutePath.toInput(CommonMtagsEnrichments.scala:395)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:152)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:132)
+	at scala.meta.internal.metals.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:99)
+	... 15 more
+
+2020.09.22 14:37:40 WARN  javac exited with exit code 1
+2020.09.22 14:37:40 INFO  time: compiled project1 in 0.88s
+2020.09.22 14:38:02 INFO  compiling project1 (2 java sources)
+2020.09.22 14:38:02 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:38:02 INFO  time: compiled project1 in 0.99s
+2020.09.22 14:41:32 INFO  compiling project1 (1 java source)
+2020.09.22 14:41:32 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:41:32 INFO  time: compiled project1 in 0.85s
+2020.09.22 14:42:41 INFO  compiling project1 (1 java source)
+2020.09.22 14:42:41 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:42:41 INFO  time: compiled project1 in 0.82s
+2020.09.22 14:43:44 INFO  compiling project1 (1 java source)
+2020.09.22 14:43:44 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:43:44 INFO  time: compiled project1 in 0.82s
+2020.09.22 14:43:48 INFO  compiling project1 (1 java source)
+2020.09.22 14:43:48 WARN  Unexpected javac output: warning: [options] bootstrap class path not set in conjunction with -source 7
+1 warning.
+2020.09.22 14:43:48 INFO  time: compiled project1 in 0.82s

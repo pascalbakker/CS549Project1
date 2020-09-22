@@ -4,11 +4,8 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
-import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import edu.wpi.project1.Query2.ReduceJoinReducer;
 /**
  * Project 1
  *
@@ -31,7 +28,14 @@ public class App {
         MAP REDUCE JOBS
     */
 
-    // TODO Query 2
+    /**
+     * Joins the customer and transaction tables and finds the total tranaction amount for each customer. Results are formatted as customer_id,customer_name,total_transaction_amount.
+     * @author Pascal Bakker
+     * @param customer_csv_path Customer.txt file location
+     * @param transcation_csv_path Transaction.txt file location
+     * @param output_string_path  Hadoop results output folder
+     * @throws Exception
+     */
     public static void mr_query2(String customer_csv_path, String transcation_csv_path,String output_string_path) throws Exception {
         System.out.println("Query 2: Find customer transcation totals");
         Configuration conf = new Configuration();
@@ -39,9 +43,9 @@ public class App {
         Job job = Job.getInstance(conf, "query2: find customer transaction total");
         job.setJarByClass(Query2.class);
         // Set custom functions
-        job.setMapperClass(Query2.CustomerMapper.class);
-        job.setCombinerClass(Query2.CustomerCombiner.class);
-        job.setReducerClass(ReduceJoinReducer.class);
+        job.setMapperClass(Query2.CustomMapper.class);
+        job.setCombinerClass(Query2.CustomCombiner.class);
+        job.setReducerClass(Query2.CustomReducer.class);
         // set input/output data types
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
@@ -51,7 +55,6 @@ public class App {
         // write outputs
         Path outputPath = new Path(output_string_path);
         FileOutputFormat.setOutputPath(job, outputPath);
-        outputPath.getFileSystem(conf).delete(outputPath);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
