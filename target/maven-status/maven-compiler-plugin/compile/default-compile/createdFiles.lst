@@ -1,5 +1,6 @@
 edu/wpi/project1/Query2$CustomerMapper.class
 edu/wpi/project1/Query2.class
 edu/wpi/project1/Query2$ReduceJoinReducer.class
+edu/wpi/project1/Query2$CustomerCombiner.class
 edu/wpi/project1/Query2$TransactionMapper.class
 edu/wpi/project1/App.class

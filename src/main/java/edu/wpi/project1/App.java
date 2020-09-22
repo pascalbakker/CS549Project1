@@ -3,6 +3,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -15,7 +16,7 @@ import edu.wpi.project1.Query2.ReduceJoinReducer;
 public class App {
     public static void main( String[] args ) throws Exception
     {
-        org.apache.log4j.BasicConfigurator.configure();
+        org.apache.log4j.BasicConfigurator.configure(); // log output
         mr_query2("data/Customers.txt","data/Transactions.txt","data/result");
     }
 
@@ -34,13 +35,20 @@ public class App {
     public static void mr_query2(String customer_csv_path, String transcation_csv_path,String output_string_path) throws Exception {
         System.out.println("Query 2: Find customer transcation totals");
         Configuration conf = new Configuration();
+        // Setup job
         Job job = Job.getInstance(conf, "query2: find customer transaction total");
         job.setJarByClass(Query2.class);
+        // Set custom functions
+        job.setMapperClass(Query2.CustomerMapper.class);
+        job.setCombinerClass(Query2.CustomerCombiner.class);
         job.setReducerClass(ReduceJoinReducer.class);
+        // set input/output data types
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
-        MultipleInputs.addInputPath(job, new Path(customer_csv_path),TextInputFormat.class, Query2.CustomerMapper.class);
-        MultipleInputs.addInputPath(job, new Path(transcation_csv_path),TextInputFormat.class, Query2.TransactionMapper.class);
+        // set input file
+        FileInputFormat.addInputPath(job, new Path("data/Transactions.txt"));
+        job.addCacheFile(new Path("data/Customers.txt").toUri());
+        // write outputs
         Path outputPath = new Path(output_string_path);
         FileOutputFormat.setOutputPath(job, outputPath);
         outputPath.getFileSystem(conf).delete(outputPath);
