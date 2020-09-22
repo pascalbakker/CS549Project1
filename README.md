@@ -1,5 +1,5 @@
-# Project 1 Big Data
-Homework 1 for big data. Hadoop Query stuff.
+# WPI Project 1 Big Data
+Homework 1 for big data. Processing Customer and Transaction data.
 
 ### Build
 
