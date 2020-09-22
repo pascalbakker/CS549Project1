@@ -3,8 +3,8 @@ Homework 1 for big data. Hadoop Query stuff.
 
 ### Build
 
-	mvn clean compile
+	mvn clean package
 
 ### Run
 
-	mvn exec:java -Dexec.mainClass=edu.wpi.project1.App
+	hadoop jar target/project1-1.0-SNAPSHOT.jar
