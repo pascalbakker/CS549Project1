@@ -37,7 +37,7 @@ class Customers {
       Id = i;
       Name = Name();
       Age = random.nextInt(60) + 10;
-      if(random.nextInt(1) == 1) { Gender = "female";} else { Gender = "male";}
+      if(random.nextInt(2) == 1) { Gender = "female";} else { Gender = "male";}
       CountryCode = random.nextInt(10) + 1;
       Salary = random.nextInt(9900) + 100;
    }
