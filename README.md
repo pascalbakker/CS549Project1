@@ -11,21 +11,21 @@ Project Division:
 	
 	2. Both
 	
-	3.1 Pascal Bakker
+	3.1 (Query2) Pascal Bakker
 	
-	3.2 Mario Arduz
+	3.2 (Query3) Mario Arduz
 	
-	3.3 Pascal Bakker
+	3.3 (Query4) Pascal Bakker
 	
-	3.4 Mario Arduz
+	3.4 (Query5) Mario Arduz
 	
-	4.1 Pascal Bakker
+	4.1 (PigQuery1) Pascal Bakker
 	
-	4.2 Mario Arduz
+	4.2 (PigQuery2) Mario Arduz
 	
-	4.3 Pascal Bakker
+	4.3 (PigQuery3) Pascal Bakker
 	
-	4.4 Mario Arduz
+	4.4 (PigQuery4) Mario Arduz
 
 ### Generate Data
 
