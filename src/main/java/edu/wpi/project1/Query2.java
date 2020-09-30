@@ -11,7 +11,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
-// TODO fix names, clean up code
 public class Query2{
 
 	// Customer id,name,age,gender,country,salary

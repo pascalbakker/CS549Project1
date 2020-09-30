@@ -33,10 +33,14 @@ public class App {
         // RUN QUERIES
         String customerPath = "data/Customers.txt";
         String transactionPath = "data/Transactions.txt";
-        //mr_query2(customerPath,transactionPath,"data/result/query2");
-        //mr_query3(customerPath,transactionPath,"data/result/query3");
-        //mr_query4(customerPath,transactionPath,"data/result/query4");
-        //mr_query5(customerPath,transactionPath,"data/result/query5");
+        if(args.length==0) return;
+        switch(args[0]){
+            case "2": mr_query2(customerPath,transactionPath,"data/result/query2");
+            case "3": mr_query3(transactionPath,"data/result/query3");
+            case "4": mr_query4(customerPath,transactionPath,"data/result/query4");
+            case "5": mr_query5(transactionPath,"data/result/query5");
+            default: System.out.println("Arguements not valid. Please pass a number between 2 and 5");
+        }
     }
 
     public static void deleteResults(String result_path){

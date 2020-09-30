@@ -1,4 +1,0 @@
-hadoop dfs -rmr /user/hadoop/output
-hadoop com.sun.tools.javac.Main Query3.java; jar cf wc.jar Query3*.class; hadoop jar wc.jar Query3 /user/hadoop/Project1/data/Transactions.txt /user/hadoop/output
-
-
