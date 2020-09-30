@@ -6,6 +6,7 @@ Team members:
 	Mario Arduz
 
 Project Division:
+
 	1. Both
 	
 	2. Both
