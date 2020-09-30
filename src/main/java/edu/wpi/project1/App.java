@@ -82,7 +82,7 @@ public class App {
     }
 
     /** 3.2
-    * @author Mario Marduz
+    * @author Mario Arduz
     * @throws Exception
     */
 public static void mr_query3(String transcation_csv_path, String output_string_path) throws Exception {
@@ -136,7 +136,7 @@ public static void mr_query4(String customer_csv_path, String transcation_csv_pa
     }
 
     /** 3.4
-    * @author Mario Marduz
+    * @author Mario Arduz
     * @throws Exception
     */
     public static void mr_query5(String transcation_csv_path, String output_string_path) throws Exception{
