@@ -5,7 +5,7 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class DataGenerator {
    public static void main(String[] args) throws IOException  {
       FileWriter myWriter = new FileWriter("Customers.txt");
-      for (int i = 1; i<=10; i++) {      
+      for (int i = 1; i<=50000; i++) {      
          Customers person = new Customers(i);
          String text = person.Id +","+person.Name+","+person.Age+","+
             person.Gender+","+person.CountryCode+","+person.Salary+"\n";
@@ -14,7 +14,7 @@ public class DataGenerator {
       myWriter.close();
       
       myWriter = new FileWriter("Transactions.txt");
-      for (int i = 1; i<=1000; i++) {      
+      for (int i = 1; i<=5000000; i++) {      
          Transactions transaction = new Transactions(i);
          String text = transaction.TransID +","+transaction.CustID+","+transaction.TransTotal+","+
          transaction.TransNumItems+","+transaction.TransDesc+"\n";
@@ -72,7 +72,7 @@ class Customers {
    Transactions (int i) {
       Random random = new Random();
       TransID = i;
-      CustID = random.nextInt(10) + 1;
+      CustID = random.nextInt(50000) + 1;
       TransTotal = random.nextInt(990) + 10;
       TransNumItems = random.nextInt(10) + 1;
       TransDesc = TransDesc();
