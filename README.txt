@@ -23,7 +23,11 @@ Build
 
 Run Hadoop Jobs
 
-	hadoop jar target/project1-1.0-SNAPSHOT.jar
+	Arguements must be between 2 and 5
+
+	hadoop jar target/project1-1.0-SNAPSHOT.jar [2-5]
+
+	Results for hadoop jobs are stored in data/results
 
 Run Pig Jobs
 
