@@ -14,6 +14,9 @@ import org.apache.pig.PigServer;
 import org.apache.pig.backend.executionengine.ExecException;
 
 import edu.wpi.project1.*;
+import edu.wpi.project1.Query5.*;
+import edu.wpi.project1.Query3.*;
+
 /**
  * Project 1
  *
@@ -23,20 +26,18 @@ public class App {
     {
         // properties set so that pig scripts can be run
         Properties props = new Properties();
-        props.setProperty("fs.default.name", "hdfs://<namenode-hostname>:<port>");
-        props.setProperty("mapred.job.tracker", "<jobtracker-hostname>:<port>");
+        props.setProperty("fs.default.name", "hdfs://localhost:9000");
+        //props.setProperty("fs.default.name", "hdfs://<namenode-hostname>:<port>");
+        //props.setProperty("mapred.job.tracker", "<jobtracker-hostname>:<port>");
         org.apache.log4j.BasicConfigurator.configure(); // log output
         // RUN QUERIES
-        //mr_query2("data/Customers.txt","data/Transactions.txt","data/result/query2");
-        //mr_query4("data/Customers.txt","data/Transactions.txt","data/result/query4");
+        String customerPath = "data/Customers.txt";
+        String transactionPath = "data/Transactions.txt";
+        //mr_query2(customerPath,transactionPath,"data/result/query2");
+        //mr_query3(customerPath,transactionPath,"data/result/query3");
+        //mr_query4(customerPath,transactionPath,"data/result/query4");
+        //mr_query5(customerPath,transactionPath,"data/result/query5");
     }
-
-    // TODO Creating Transaction
-    public static void createTransaction(){}
-
-    // TODO Create Customer
-    public static void createCustomer(){}
-
 
     public static void deleteResults(String result_path){
             File resultsFolder = new File(result_path);
@@ -55,10 +56,10 @@ public class App {
      * @throws Exception
      */
     public static void mr_query2(String customer_csv_path, String transcation_csv_path,String output_string_path) throws Exception {
-        System.out.println("Query 2: Find customer transcation totals");
+        deleteResults(output_string_path);
         Configuration conf = new Configuration();
         // Setup job
-        Job job = Job.getInstance(conf, "query2: find customer transaction total");
+        Job job = Job.getInstance(conf, "Query 2: Find customer transcation totals");
         job.setJarByClass(Query2.class);
         // Set custom functions
         job.setMapperClass(Query2.CustomMapper.class);
@@ -76,10 +77,29 @@ public class App {
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-    // TODO Query 3
-    public static void mr_query3(){}
+    /** 3.2
+    * @author Mario Marduz
+    * @throws Exception
+    */
+public static void mr_query3(String transcation_csv_path, String output_string_path) throws Exception {
+        Configuration conf = new Configuration();
+        Job job = Job.getInstance(conf, "word count");
+        job.setJarByClass(Query3.class);
+        job.setMapperClass(Query3.TokenizerMapper.class);
+        job.setCombinerClass(Query3.IntSumReducer.class);
+        //job.setNumReduceTasks(1);
+        job.setReducerClass(Query3.IntSumReducer.class);
 
-    // TODO Query 4
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(Text.class);
+
+        FileInputFormat.addInputPath(job, new Path(transcation_csv_path));
+        FileOutputFormat.setOutputPath(job, new Path(output_string_path));
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+
     /** 3.3
      * Find the total amount of customers per country, and the minimum and maximum amount spent by a customer in a country
      * @author Pascal Bakker
@@ -91,10 +111,9 @@ public class App {
 public static void mr_query4(String customer_csv_path, String transcation_csv_path,String output_string_path) throws Exception {
         // delete old results
         deleteResults(output_string_path);
-        System.out.println("Query 4: Find country");
         Configuration conf = new Configuration();
         // Setup job
-        Job job = Job.getInstance(conf, "query4: find country customer amount");
+        Job job = Job.getInstance(conf, "Query 4: find country customer amount");
         job.setJarByClass(Query4.class);
         // Set custom functions
         job.setMapperClass(Query4.CustomMapper.class);
@@ -112,26 +131,26 @@ public static void mr_query4(String customer_csv_path, String transcation_csv_pa
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-    // TODO Query 5
-    public static void mr_query5(){}
-
-    /**
-        APACHE PIG JOBS
-     * @throws IOException
+    /** 3.4
+    * @author Mario Marduz
+    * @throws Exception
     */
+    public static void mr_query5(String transcation_csv_path, String output_string_path) throws Exception{
+        Configuration conf = new Configuration();
+        Job job = Job.getInstance(conf, "word count");
+        job.setJarByClass(Query5.class);
+        job.setMapperClass(Query5.TokenizerMapper.class);
+        //job.setCombinerClass(IntSumCombiner.class);
+        //job.setNumReduceTasks(1);
+        job.setReducerClass(Query5.IntSumReducer.class);
 
-    // TODO Query 1
-    public static void pig_query1() throws Exception{
-        PigServer pigServer = new PigServer(ExecType.MAPREDUCE);
-        pigServer.registerScript("PigQuery1.pig");
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(Text.class);
+
+        FileInputFormat.addInputPath(job, new Path(transcation_csv_path));
+        FileOutputFormat.setOutputPath(job, new Path(output_string_path));
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
-
-    // TODO Query 2
-    public static void pig_query2(){}
-
-    // TODO Query 3
-    public static void pig_query3(){}
-
-    // TODO Query 4
-    public static void pig_query4(){}
 }
