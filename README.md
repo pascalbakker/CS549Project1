@@ -27,6 +27,10 @@ Project Division:
 	
 	4.4 Mario Arduz
 
+### Generate Data
+
+If you need to generate data, run the start.sh file in DataGenerator
+
 ### Build
 
 	mvn clean package
