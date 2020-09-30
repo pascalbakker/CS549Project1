@@ -42,3 +42,6 @@ Results for hadoop jobs are stored in data/results
 ### Run Pig Jobs
 
 	Run each Run.sh file located in the PigLatin Folder
+	
+Results for hadoop jobs are stored in data/results
+
