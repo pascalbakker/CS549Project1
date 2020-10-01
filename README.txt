@@ -5,17 +5,19 @@ Team members:
 	Pascal Bakker
 	Mario Arduz
 
+
 Project Division:
+
 	1. Both
 	2. Both
-	3.1 Pascal Bakker
-	3.2 Mario Arduz
-	3.3 Pascal Bakker
-	3.4 Mario Arduz
-	4.1 Pascal Bakker
-	4.2 Mario Arduz
-	4.3 Pascal Bakker
-	4.4 Mario Arduz
+	3.1 (Query2) Pascal Bakker
+	3.2 (Query3) Mario Arduz
+	3.3 (Query4) Pascal Bakker
+	3.4 (Query5) Mario Arduz
+	4.1 (PigQuery1) Pascal Bakker
+	4.2 (PigQuery2) Mario Arduz
+	4.3 (PigQuery3) Pascal Bakker
+	4.4 (PigQuery4) Mario Arduz
 
 Build
 
@@ -32,3 +34,6 @@ Run Hadoop Jobs
 Run Pig Jobs
 
 	Run each Run.sh file located in the PigLatin Folder
+
+Results for hadoop jobs are stored in data/results
+
